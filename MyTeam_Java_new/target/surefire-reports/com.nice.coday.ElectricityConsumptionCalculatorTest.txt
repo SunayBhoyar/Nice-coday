@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.nice.coday.ElectricityConsumptionCalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.157 s <<< FAILURE! - in com.nice.coday.ElectricityConsumptionCalculatorTest
+test1(com.nice.coday.ElectricityConsumptionCalculatorTest)  Time elapsed: 0.033 s  <<< FAILURE!
+java.lang.AssertionError: expected:<690.6> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test1(ElectricityConsumptionCalculatorTest.java:40)
+
+test2(com.nice.coday.ElectricityConsumptionCalculatorTest)  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<3972.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test2(ElectricityConsumptionCalculatorTest.java:97)
+
+test4(com.nice.coday.ElectricityConsumptionCalculatorTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<736.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test4(ElectricityConsumptionCalculatorTest.java:156)
+
+test5(com.nice.coday.ElectricityConsumptionCalculatorTest)  Time elapsed: 0.011 s  <<< FAILURE!
+java.lang.AssertionError: expected:<351797.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test5(ElectricityConsumptionCalculatorTest.java:201)
+
+test6(com.nice.coday.ElectricityConsumptionCalculatorTest)  Time elapsed: 0.035 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2741580.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test6(ElectricityConsumptionCalculatorTest.java:241)
+
+test7(com.nice.coday.ElectricityConsumptionCalculatorTest)  Time elapsed: 0.047 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1.2823458E7> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test7(ElectricityConsumptionCalculatorTest.java:285)
+
