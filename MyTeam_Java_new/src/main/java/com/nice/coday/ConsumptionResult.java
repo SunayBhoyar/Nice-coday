@@ -7,10 +7,10 @@ import java.util.Map;
 
 public class ConsumptionResult {
 
-    private List<ConsumptionDetails> consumptionDetails = new ArrayList<>();
+    public List<ConsumptionDetails> consumptionDetails = new ArrayList<>();
     public Map<String, Long> totalChargingStationTime = new HashMap<>();
 
-    private void setConsumptionDetails(List<ConsumptionDetails> consumptionDetails) {
+    public void setConsumptionDetails(List<ConsumptionDetails> consumptionDetails) {
         this.consumptionDetails = consumptionDetails;
     }
 
