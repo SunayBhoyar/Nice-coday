@@ -102,7 +102,7 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
                 double distanceTravellable=(mileage*currBattery)/100;
                 String chargingStation=closestChargingStation(( long)distanceTravellable, (long)start);
                 Double chargingStationDistance=0D;
-                if((distanceTravellable + start) >=end)
+                if((distanceTravellable + start) > end)
                 {
                             result tempRes=consumptionDetails.get(vehicleType);
                             double units = tempRes.units;
