@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.202" tests="7" errors="0" skipped="0" failures="6">
+  <properties>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/test-classes:/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/classes:/Users/sunaykishorbhoyar/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/sunaykishorbhoyar/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/sunaykishorbhoyar/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/poi/poi-ooxml/5.2.5/poi-ooxml-5.2.5.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/poi/poi/5.2.5/poi-5.2.5.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/sunaykishorbhoyar/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.5/poi-ooxml-lite-5.2.5.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/xmlbeans/xmlbeans/5.2.0/xmlbeans-5.2.0.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-compress/1.25.0/commons-compress-1.25.0.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-io/commons-io/2.15.0/commons-io-2.15.0.jar:/Users/sunaykishorbhoyar/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/sunaykishorbhoyar/.m2/repository/com/opencsv/opencsv/5.5.2/opencsv-5.5.2.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/surefire/surefirebooter17508613700969169243.jar /Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/surefire 2024-09-14T16-48-31_977-jvmRun1 surefire14520773755892336787tmp surefire_01573230890499710699tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.nice.coday.ElectricityConsumptionCalculatorTest"/>
+    <property name="surefire.test.class.path" value="/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/test-classes:/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/classes:/Users/sunaykishorbhoyar/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/sunaykishorbhoyar/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/sunaykishorbhoyar/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/poi/poi-ooxml/5.2.5/poi-ooxml-5.2.5.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/poi/poi/5.2.5/poi-5.2.5.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/sunaykishorbhoyar/.m2/repository/com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.5/poi-ooxml-lite-5.2.5.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/xmlbeans/xmlbeans/5.2.0/xmlbeans-5.2.0.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-compress/1.25.0/commons-compress-1.25.0.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-io/commons-io/2.15.0/commons-io-2.15.0.jar:/Users/sunaykishorbhoyar/.m2/repository/com/github/virtuald/curvesapi/1.08/curvesapi-1.08.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/sunaykishorbhoyar/.m2/repository/com/opencsv/opencsv/5.5.2/opencsv-5.5.2.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/sunaykishorbhoyar/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/sunaykishorbhoyar/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/sunaykishorbhoyar"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new/target/surefire/surefirebooter17508613700969169243.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="22.0.2+9-70"/>
+    <property name="user.name" value="sunaykishorbhoyar"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="/Users/sunaykishorbhoyar/.vscode/extensions/oracle.oracle-java-22.1.2/nbcode/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/Users/sunaykishorbhoyar/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/jx/5kjyz7n929b22sjr2tqp7s2c0000gn/T/"/>
+    <property name="java.version" value="22.0.2"/>
+    <property name="user.dir" value="/Users/sunaykishorbhoyar/Nice/v2/MyTeam_Java_new"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/sunaykishorbhoyar/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="22.0.2+9-70"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="66.0"/>
+  </properties>
+  <testcase name="test1" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.034">
+    <failure message="expected:&lt;690.6&gt; but was:&lt;0.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<690.6> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test1(ElectricityConsumptionCalculatorTest.java:40)
+]]></failure>
+    <system-out><![CDATA[Vehicle Type: V1, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V2, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+]]></system-out>
+  </testcase>
+  <testcase name="test2" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.003">
+    <failure message="expected:&lt;3972.0&gt; but was:&lt;0.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<3972.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test2(ElectricityConsumptionCalculatorTest.java:97)
+]]></failure>
+    <system-out><![CDATA[Vehicle Type: V1, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V2, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V3, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V4, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V5, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+]]></system-out>
+  </testcase>
+  <testcase name="test3" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.004"/>
+  <testcase name="test4" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.004">
+    <failure message="expected:&lt;736.0&gt; but was:&lt;0.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<736.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test4(ElectricityConsumptionCalculatorTest.java:156)
+]]></failure>
+    <system-out><![CDATA[Vehicle Type: V6, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V7, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V8, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V9, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V10, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V1, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V2, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V3, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V4, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V5, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+]]></system-out>
+  </testcase>
+  <testcase name="test5" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.013">
+    <failure message="expected:&lt;351797.0&gt; but was:&lt;0.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<351797.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test5(ElectricityConsumptionCalculatorTest.java:201)
+]]></failure>
+    <system-out><![CDATA[Vehicle Type: V6, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V7, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V8, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V9, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V10, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V1, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V2, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V3, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V4, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V5, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+]]></system-out>
+  </testcase>
+  <testcase name="test6" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.074">
+    <failure message="expected:&lt;2741580.0&gt; but was:&lt;0.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<2741580.0> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test6(ElectricityConsumptionCalculatorTest.java:241)
+]]></failure>
+    <system-out><![CDATA[Vehicle Type: V6, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V7, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V8, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V9, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V10, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V20, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V12, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V11, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V14, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V13, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V16, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V1, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V15, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V2, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V18, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V3, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V17, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V4, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V5, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V19, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+actualTotalUnitsConsumed : 0.0
+]]></system-out>
+  </testcase>
+  <testcase name="test7" classname="com.nice.coday.ElectricityConsumptionCalculatorTest" time="0.048">
+    <failure message="expected:&lt;1.2823458E7&gt; but was:&lt;0.0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<1.2823458E7> but was:<0.0>
+	at com.nice.coday.ElectricityConsumptionCalculatorTest.test7(ElectricityConsumptionCalculatorTest.java:285)
+]]></failure>
+    <system-out><![CDATA[Vehicle Type: V21, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V20, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V23, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V22, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V25, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V24, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V27, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V1, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V26, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V2, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V29, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V3, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V28, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V4, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V5, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V6, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V7, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V8, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V9, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V30, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V10, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V12, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V11, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V14, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V13, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V16, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V15, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V18, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V17, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+Vehicle Type: V19, Total Unit Consumed: 0.0, Total Time Required: 0, Number of Trips Finished: 0
+]]></system-out>
+  </testcase>
+</testsuite>
