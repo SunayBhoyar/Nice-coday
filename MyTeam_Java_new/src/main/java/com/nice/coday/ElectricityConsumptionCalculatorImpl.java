@@ -27,26 +27,28 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
     public String closestChargingStation(long distance , long start) throws IOException {
         int low = 0;
         int high = chargingStationData.size() - 1;
-
+        String ans="-1";
         ChargingStation closestStation = null;
         while (low <= high) {
             int mid = (int) (low + (high - low) / 2);
             ChargingStation currentStation = chargingStationData.get(mid);
 
             if (currentStation.getDistanceFromStart() <= (start + distance)) {
-                if (currentStation.getDistanceFromStart() >= start) {
+                if (currentStation.getDistanceFromStart() > start) {
                     closestStation = currentStation;
+                    ans=closestStation.getStationName();
                 }
                 low = mid + 1;
             } else {
                 high = mid - 1;
             }
         }
-        if (closestStation != null) {
-            return closestStation.getStationName();
-        } else {
-            return "-1";
-        }
+        // if (closestStation != null) {
+        //     return closestStation.getStationName();
+        // } else {
+        //     return "-1";
+        // }
+        return ans;
     }   
     @Override
     public ConsumptionResult calculateElectricityAndTimeConsumption(ResourceInfo resourceInfo) throws IOException {
@@ -80,8 +82,6 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
 
                 // Store the data in the map with station name as key and distance as value
                 stationMap.put(stationName, distanceFromStart);
-                //amp
-                consumptionDetails.put(stationName,new result());
                 totalChargingStationTime.put(stationName,0L);
             }
         } catch (Exception e) {
@@ -93,6 +93,31 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
 
         ConsumptionResult result=new ConsumptionResult();
 
+        try (BufferedReader br = new BufferedReader(new FileReader(resourceInfo.vehicleTypeInfoPath.toString()))) {
+            String line;
+            boolean firstLine = true;  // to skip the header
+
+            while ((line = br.readLine()) != null) {
+                // Skip the header
+                if (firstLine) {
+                    firstLine = false;
+                    continue;
+                }
+
+                // Split the line by commas
+                String[] values = line.split(",");
+
+                // Assuming first column is station name and second is distance
+                String vehicleName = values[0];
+                //amp
+                result obj=new result();
+                consumptionDetails.put(vehicleName,obj);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         for(TripDetails trip:tripDetails){
             double start = entryExitPointData.get(trip.getEntryPoint());
             double init_start=start;
@@ -103,7 +128,7 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
             int numberOfUnitsForFullyCharge=vehicleTypeData.get(vehicleType).getNumberOfUnitsForFullyCharge();
             
             // System.out.println(start+" "+end);
-            long distanceTillNow=(long) start;
+            // long distanceTillNow=(long) start;
             double unitsTillNow=0L,timeTillNow=0L;
             boolean flag=true;
             while(flag){
@@ -111,20 +136,26 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
                 String chargingStation=closestChargingStation(( long)distanceTravellable, (long)start);
                 Double chargingStationDistance=0D;
                 
-                System.out.print("Distance now "+distanceTravellable);
-
+                // System.out.print("Distance now "+distanceTravellable);
                 if(distanceTravellable + start >=end){
                         // if (consumptionDetails.containsKey(vehicleType)) {
                             // Key exists, update the existing result
-                            result existingResult = consumptionDetails.get(vehicleType);
-                            consumptionDetails.get(vehicleType).trips++;
-                            existingResult.units +=(end-init_start)*numberOfUnitsForFullyCharge/mileage; ;
-                            existingResult.time += timeTillNow;
-                            existingResult.trips += 1;
-                            // consumptionDetails.put(vehicleType, newResult);
+                            result tempRes=consumptionDetails.get(vehicleType);
+                            double units = tempRes.units;
+                            long time = tempRes.time;
+                            long TTrip = tempRes.trips;
+                            // consumptionDetails.get(vehicleType).trips++;
+                            // if(start==init_start)
+                            // units +=(end-init_start)*numberOfUnitsForFullyCharge/mileage
+                            units+=unitsTillNow;
+                            // else
+                            // units +=(end-start)*numberOfUnitsForFullyCharge/mileage;
+                            time += timeTillNow;
+                            TTrip += 1;
+                            result temp=new result(units, time,TTrip);
+                            consumptionDetails.put(vehicleType, temp);
                             flag=false;
                             break;
-                            
                         // } else {
                         //     // Key does not exist, create a new result
                         //     result newResult = new result();
@@ -135,17 +166,30 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
                         //     consumptionDetails.put(vehicleType, newResult);
                         // }
                 }
-                else{
-                    if(!chargingStation.equals("-1")) chargingStationDistance=stationMap.get(chargingStation);
-                    else{
-                        result existingResult = consumptionDetails.get(vehicleType);
-                            consumptionDetails.get(vehicleType).trips++;
-                            existingResult.units +=(end-start)*numberOfUnitsForFullyCharge/mileage; ;
+                else if(chargingStation.equals("-1"))
+                {
+                    result existingResult = consumptionDetails.get(vehicleType);
+                            // consumptionDetails.get(vehicleType).trips++;
+                            // existingResult.units +=(start-init_start)*numberOfUnitsForFullyCharge/mileage; 
+                            existingResult.units +=unitsTillNow;
                             existingResult.time += timeTillNow;
-                            // consumptionDetails.put(vehicleType, newResult);
+                            consumptionDetails.put(vehicleType, existingResult);
                             flag=false;
                         break;
-                    }
+                }
+                else{
+                    // if(!chargingStation.equals("-1")) chargingStationDistance=stationMap.get(chargingStation);
+                    // else{
+                    //     result existingResult = consumptionDetails.get(vehicleType);
+                    //         consumptionDetails.get(vehicleType).trips++;
+                    //         // existingResult.units +=(start-init_start)*numberOfUnitsForFullyCharge/mileage; 
+                    //         existingResult.units +=unitsTillNow;
+                    //         existingResult.time += timeTillNow;
+                    //         consumptionDetails.put(vehicleType, existingResult);
+                    //         flag=false;
+                    //     break;
+                    // }
+                    chargingStationDistance=stationMap.get(chargingStation);
                     double batteryleft=(distanceTravellable+start-chargingStationDistance)*100/(mileage);
                     double chargableBattery=100-batteryleft;
                     double UnitsToCharge=chargableBattery*(vehicleTypeData.get(vehicleType).getNumberOfUnitsForFullyCharge())/(100);
@@ -153,7 +197,7 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
                     timeTillNow+= (UnitsToCharge*chargingSpeedPerUnit);
                     unitsTillNow+=UnitsToCharge;
                     // totalChargingStationTime.put(chargingStation)=totalChargingStationTime.get(chargingStation)+(long)timeTillNow;
-                    totalChargingStationTime.put(chargingStation, totalChargingStationTime.getOrDefault(chargingStation, 0L) + (long) timeTillNow);
+                    totalChargingStationTime.put(chargingStation, totalChargingStationTime.getOrDefault(chargingStation, 0L) + (long) (UnitsToCharge*chargingSpeedPerUnit));
                     //
                     start=chargingStationDistance;
                     currBattery=100;
@@ -169,6 +213,5 @@ public class ElectricityConsumptionCalculatorImpl implements ElectricityConsumpt
         });
         result.setConsumptionDetails(MainconsumptionDetails);
         return result;
-        
     }
 }
