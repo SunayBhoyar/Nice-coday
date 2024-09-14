@@ -94,7 +94,7 @@ public class ElectricityConsumptionCalculatorTest {
         //Total Unit Consume by all vehicles
         double expectedTotalUnitsConsumed = 3972;
         double actualTotalUnitsConsumed  = resultData.getConsumptionDetails().stream().mapToDouble(ConsumptionDetails::getTotalUnitConsumed).sum();
-        // Assert.assertEquals(expectedTotalUnitsConsumed, actualTotalUnitsConsumed, 2.0);
+        Assert.assertEquals(expectedTotalUnitsConsumed, actualTotalUnitsConsumed, 2.0);
 
         //Total Unit Consume by Vehicle Type V4
         double expectedTotalUnitsConsumedByV4 = 670.27;
@@ -198,7 +198,7 @@ public class ElectricityConsumptionCalculatorTest {
         double actualTotalUnitsConsumed  = resultData.getConsumptionDetails().stream()
                 .mapToDouble(ConsumptionDetails::getTotalUnitConsumed)
                 .sum();
-        // Assert.assertEquals(expectedTotalUnitsConsumed, actualTotalUnitsConsumed, 10.0);
+        Assert.assertEquals(expectedTotalUnitsConsumed, actualTotalUnitsConsumed, 10.0);
 
         // Total Unit Consume by Vehicle Type V4
         double expectedTotalUnitsConsumedByV4 = 39110;
