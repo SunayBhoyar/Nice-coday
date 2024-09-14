@@ -1,18 +1,15 @@
 package com.nice.coday;
 
-import java.nio.file.Path;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 public class CSVParser{
-    public static Map<String, Double> readChargingStationData(Path csvPath) {
-        Map<String, Double> stationMap = new HashMap<>();
+    public static List<ChargingStation> readChargingStationData(Path csvPath) {
+        List<ChargingStation> stationList = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvPath.toString()))) {
             String line;
@@ -28,18 +25,18 @@ public class CSVParser{
                 // Split the line by commas
                 String[] values = line.split(",");
 
-                // Assuming first column is station name and second is distance
+                // Extract each column from the row
                 String stationName = values[0];
-                double distanceFromStart = Double.parseDouble(values[1]);
+                Double distanceFromStart = Double.parseDouble(values[1]);
 
-                // Store the data in the map with station name as key and distance as value
-                stationMap.put(stationName, distanceFromStart);
+                ChargingStation station = new ChargingStation(stationName, distanceFromStart);
+                stationList.add(station);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.toString();
         }
 
-        return stationMap;
+        return stationList;
     }
     public static Map<String, Double> readEntryExitPointData(Path csvPath) {
         Map<String, Double> entryExitMap = new HashMap<>();
